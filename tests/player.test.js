@@ -6,7 +6,7 @@ describe('Player', () => {
   let enemyBoard;
 
   beforeEach(() => {
-    player = Player();
+    player = Player('human');  // Pass 'human' as an argument
     enemyBoard = Gameboard();
   });
 
