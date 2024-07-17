@@ -39,11 +39,17 @@ const Gameboard = () => {
   
     const getBoard = () => board.map(row => [...row]);
   
+    const isValidMove = (x, y) => {
+      return x >= 0 && x < 10 && y >= 0 && y < 10 && 
+             board[x][y] !== 'hit' && board[x][y] !== 'miss';
+    };
+  
     return {
       placeShip,
       receiveAttack,
       allShipsSunk,
-      getBoard
+      getBoard,
+      isValidMove
     };
   };
   
