@@ -7,9 +7,11 @@ const Player = (type) => {
           y = Math.floor(Math.random() * 10);
         } while (enemyBoard.getBoard()[x][y] === 'hit' || enemyBoard.getBoard()[x][y] === 'miss');
         return { x, y };
+      } else {
+        // For human players, return a dummy move
+        // In the actual game, this will be handled by the UI
+        return { x: -1, y: -1 };
       }
-      // For human players, moves will be handled by user input in the UI
-      return null;
     };
   
     return {
