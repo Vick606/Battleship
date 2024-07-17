@@ -52,8 +52,8 @@
   }
   
   .cell {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: var(--light-blue);
     border-radius: 5px;
     display: flex;
