@@ -34,6 +34,8 @@ describe('Player', () => {
       const moveString = `${move.x},${move.y}`;
       expect(moves.has(moveString)).toBe(false);
       moves.add(moveString);
+      // Simulate the move on the board
+      enemyBoard.receiveAttack(move.x, move.y);
     }
   });
 });
