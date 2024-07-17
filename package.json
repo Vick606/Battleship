@@ -2,7 +2,7 @@
   "name": "battleship",
   "version": "1.0.0",
   "main": "index.js",
-    "homepage": "https://Vick606.github.io/battleship",
+    "homepage": "https://vick606.github.io/Battleship",
   "scripts": {
     "test": "jest",
     "build": "webpack --mode production",
