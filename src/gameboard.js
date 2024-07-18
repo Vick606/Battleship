@@ -54,8 +54,8 @@ const Gameboard = () => {
       receiveAttack,
       allShipsSunk,
       getBoard,
-      isValidMove
-      resetBoard
+      isValidMove,
+      resetBoard,
     };
   };
   
