@@ -16,15 +16,33 @@ const GameController = (() => {
     computer = Player('computer');
     currentPlayer = 'player';
 
-    // Place ships (for now, we'll use predetermined coordinates)
+    randomizeShips();
+  };
+
+  const randomizeShips = () => {
+    playerBoard.resetBoard();
+    computerBoard.resetBoard();
+
     const ships = [
-      Ship(4), Ship(3), Ship(3), Ship(2), Ship(2), Ship(2)
+      Ship(5), Ship(4), Ship(3), Ship(3), Ship(2)
     ];
 
-    ships.forEach((ship, index) => {
-      playerBoard.placeShip(ship, index, 0, 'horizontal');
-      computerBoard.placeShip(Ship(ship.length), index, 9 - index, 'vertical');
+    ships.forEach((ship) => {
+      placeShipRandomly(playerBoard, ship);
+      placeShipRandomly(computerBoard, ship);
     });
+  };
+
+  const placeShipRandomly = (board, ship) => {
+    let placed = false;
+    while (!placed) {
+      const x = Math.floor(Math.random() * 10);
+      const y = Math.floor(Math.random() * 10);
+      const direction = Math.random() < 0.5 ? 'horizontal' : 'vertical';
+      if (board.placeShip(ship, x, y, direction)) {
+        placed = true;
+      }
+    }
   };
 
   const playTurn = (x, y) => {
@@ -53,13 +71,16 @@ const GameController = (() => {
 
   const getPlayerBoard = () => playerBoard.getBoard();
   const getComputerBoard = () => computerBoard.getBoard();
+  const getCurrentPlayer = () => currentPlayer;
 
   return { 
     initGame, 
     playTurn, 
     checkGameOver, 
     getPlayerBoard, 
-    getComputerBoard 
+    getComputerBoard,
+    getCurrentPlayer,
+    randomizeShips
   };
 })();
 
