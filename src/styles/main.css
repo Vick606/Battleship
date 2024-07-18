@@ -93,6 +93,32 @@
     100% { transform: scale(1); }
   }
   
+  #setup-screen, #game-screen {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  #player-name {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .game-controls {
+    margin-bottom: 20px;
+  }
+  
+  #turn-display {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
   #message-box {
     margin-top: 2rem;
     padding: 1rem;
