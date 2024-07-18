@@ -43,6 +43,11 @@ const Gameboard = () => {
       return x >= 0 && x < 10 && y >= 0 && y < 10 && 
              board[x][y] !== 'hit' && board[x][y] !== 'miss';
     };
+
+    const resetBoard = () => {
+      board = Array(10).fill(null).map(() => Array(10).fill(null));
+      ships = [];
+    };
   
     return {
       placeShip,
@@ -50,6 +55,7 @@ const Gameboard = () => {
       allShipsSunk,
       getBoard,
       isValidMove
+      resetBoard
     };
   };
   
