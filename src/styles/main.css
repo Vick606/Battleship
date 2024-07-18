@@ -1,16 +1,17 @@
 :root {
-  --sea-blue: #1e3d59;
-  --light-blue: #a0d2eb;
-  --ship-gray: #444;
-  --hit-red: #ff595e;
-  --miss-white: #fff;
-  --accent-color: #ffc13b;
+  --deep-sea: #0a2342;
+  --ocean-blue: #2c4a7f;
+  --light-water: #5b88a5;
+  --sand: #e6d3a3;
+  --coral: #ff6b6b;
+  --seafoam: #a7d7c5;
+  --white-cap: #f0f3f5;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: var(--sea-blue);
-  color: var(--light-blue);
+  font-family: 'Arial', sans-serif;
+  background-color: var(--deep-sea);
+  color: var(--white-cap);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -19,14 +20,17 @@ body {
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--ocean-blue);
   padding: 1rem;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   margin: 0;
-  color: var(--accent-color);
+  color: var(--sand);
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 main {
@@ -37,35 +41,71 @@ main {
   padding: 2rem;
 }
 
+#game-screen {
+  background-color: rgba(44, 74, 127, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  width: 90%;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: var(--sand);
+  color: var(--deep-sea);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: var(--coral);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .game-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
-  margin-bottom: 2rem;
 }
 
 .board-container {
   text-align: center;
-  width: 45%; /* Adjusted as recommended */
+  width: 45%;
+}
+
+h2 {
+  color: var(--seafoam);
+  margin-bottom: 1rem;
+  font-size: 1.5em;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 2px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--ocean-blue);
   padding: 10px;
   border-radius: 10px;
-  margin-top: 1rem;
-  width: 100%;
   aspect-ratio: 1 / 1;
-  border: 2px solid var(--light-blue);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .cell {
-  background-color: rgba(160, 210, 235, 0.2);
-  border: 1px solid var(--light-blue);
+  background-color: var(--light-water);
+  border: 1px solid var(--deep-sea);
   border-radius: 2px;
   aspect-ratio: 1 / 1;
   display: flex;
@@ -76,21 +116,21 @@ main {
 }
 
 .cell:hover {
-  background-color: rgba(160, 210, 235, 0.4); 
+  background-color: var(--seafoam);
   transform: scale(1.05);
 }
 
 .ship {
-  background-color: var(--ship-gray);
+  background-color: var(--sand);
 }
 
 .hit {
-  background-color: var(--hit-red);
+  background-color: var(--coral);
   animation: explosion 0.5s;
 }
 
 .miss {
-  background-color: var(--miss-white);
+  background-color: var(--white-cap);
   animation: splash 0.5s;
 }
 
@@ -106,68 +146,26 @@ main {
   100% { transform: scale(1); }
 }
 
-#setup-screen, #game-screen {
-  width: 90%; 
-  max-width: 1200px;  
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#player-name {
-  margin-right: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--light-blue);
-}
-
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  cursor: pointer;
-  background-color: var(--accent-color);
-  color: var(--sea-blue);
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.game-controls {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-}
-
 #turn-display {
   font-size: 1.2em;
-  margin-bottom: 10px;
+  margin: 1rem 0;
   text-align: center;
-  color: var(--accent-color);
+  color: var(--sand);
 }
 
 #message-box {
   margin-top: 2rem;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--ocean-blue);
   border-radius: 10px;
   text-align: center;
   font-size: 1.2em;
-  color: var(--accent-color);
+  color: var(--white-cap);
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: var(--light-blue);
+  background-color: var(--ocean-blue);
+  color: var(--white-cap);
   text-align: center;
   padding: 1rem;
   margin-top: auto;
@@ -180,12 +178,12 @@ footer {
   }
 
   .board-container {
-    width: 100%; 
+    width: 100%;
     margin-bottom: 2rem;
   }
 
-  .cell {
-    width: 25px;
-    height: 25px;
+  .board {
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
