@@ -13,9 +13,6 @@ body {
   color: var(--light-blue);
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 header {
@@ -30,7 +27,6 @@ h1 {
 }
 
 main {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +52,6 @@ main {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
   border-radius: 10px;
-  margin-top: 1rem;
 }
 
 .cell {
