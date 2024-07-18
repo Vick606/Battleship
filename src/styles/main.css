@@ -47,6 +47,7 @@ main {
 
 .board-container {
   text-align: center;
+  width: 45%; /* Adjusted as recommended */
 }
 
 .board {
@@ -57,13 +58,14 @@ main {
   padding: 10px;
   border-radius: 10px;
   margin-top: 1rem;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Added as recommended */
 }
 
 .cell {
-  width: 30px;
-  height: 30px;
   background-color: var(--light-blue);
   border-radius: 5px;
+  aspect-ratio: 1 / 1; /* Added as recommended */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +104,8 @@ main {
 }
 
 #setup-screen, #game-screen {
-  max-width: 800px;
+  width: 90%; 
+  max-width: 1200px;  
   margin: 0 auto;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.3);
@@ -174,6 +177,7 @@ footer {
   }
 
   .board-container {
+    width: 100%; 
     margin-bottom: 2rem;
   }
 
